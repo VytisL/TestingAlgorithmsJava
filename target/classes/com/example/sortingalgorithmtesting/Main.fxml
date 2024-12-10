@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sortingalgorithmtesting.MainController">
+   <children>
+      <Button layoutX="12.0" layoutY="61.0" mnemonicParsing="false" onAction="#SelectFileHandler" prefHeight="25.0" prefWidth="171.0" text="Select file" />
+      <TableView fx:id="DataTable" layoutX="12.0" layoutY="93.0" prefHeight="335.0" prefWidth="415.0">
+        <columns>
+          <TableColumn fx:id="UnsortedDataColumn" prefWidth="208.0" text="Unsorted data" />
+          <TableColumn fx:id="SortedDataColumn" minWidth="0.0" prefWidth="207.0" text="Sorted data" />
+        </columns>
+      </TableView>
+      <Button layoutX="504.0" layoutY="61.0" mnemonicParsing="false" onAction="#ProgramHandler" prefHeight="25.0" prefWidth="171.0" text="Run" />
+      <Label layoutX="217.0" layoutY="14.0" text="SUPER SORT MASTER 9000">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="AlgorithmTable" layoutX="454.0" layoutY="93.0" prefHeight="335.0" prefWidth="254.0">
+        <columns>
+          <TableColumn fx:id="AlgorithmColumn" prefWidth="85.0" text="Algorithm" />
+          <TableColumn fx:id="TimeColumn" prefWidth="85.0" text="Time (s)" />
+            <TableColumn fx:id="MemoryColumn" prefWidth="83.0" text="Memory (KB)" />
+        </columns>
+      </TableView>
+      <ChoiceBox fx:id="AlgorithmChoiceBox" layoutX="277.0" layoutY="61.0" prefWidth="150.0" />
+   </children>
+</Pane>
