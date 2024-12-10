@@ -59,7 +59,7 @@ public class MainController implements Initializable {
         File file = fileChooser.showOpenDialog(DataTable.getScene().getWindow());
 
         if(file!=null){
-
+            dataList.clear();
             if(file.length() == 0){
                 AlertMessage.showAlert(Alert.AlertType.WARNING, "Empty file", "WARNING", "Selected file is empty");
                 return;
@@ -114,10 +114,15 @@ public class MainController implements Initializable {
             modelList.add(model);
             System.out.println(model.getList().toString());
 
-            DataTable.setItems(model.getList());
+
+
+            UnsortedDataColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue()));
             SortedDataColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue()));
             DataTable.setItems(model.getInputList());
-            UnsortedDataColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue()));
+            SortedDataColumn.getTableView().setItems(model.getList());
+
+            System.out.println(model.getInputList().toString());
+
             AlgorithmColumn.setCellValueFactory(data -> data.getValue().algorithmNameProperty());
             TimeColumn.setCellValueFactory(data -> data.getValue().algorithmTimeProperty().asObject());
             MemoryColumn.setCellValueFactory(data -> data.getValue().algorithmMemoryProperty().asObject());
