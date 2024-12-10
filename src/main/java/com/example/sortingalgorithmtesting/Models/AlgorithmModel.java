@@ -80,11 +80,12 @@ public class AlgorithmModel {
         }
     }
     public void MergeSort() {
+        list.clear();
+        list.addAll(inputList);
         mergeSortHelper(0, list.size() - 1);
     }
 
 
-    //These ones were written by ChatGPT because it's the first time I've seen them
     private void mergeSortHelper(int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2;
@@ -115,6 +116,8 @@ public class AlgorithmModel {
     }
 
     public void InsertionSort() {
+        list.clear();
+        list.addAll(inputList);
         int n = list.size();
         for (int i = 1; i < n; i++) {
             String key = list.get(i);
@@ -129,6 +132,8 @@ public class AlgorithmModel {
     }
 
     public void QuickSort() {
+        list.clear();
+        list.addAll(inputList);
         quickSortHelper(0, list.size() - 1);
     }
 
